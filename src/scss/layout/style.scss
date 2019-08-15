@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Oswald:700|Poppins&display=swap');
 
 // *** GLOBAL FONT SIZE  ***
 html {
@@ -6,7 +6,152 @@ html {
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 1.6rem;
   line-height: 1.5;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+section,
+.container {
+  @include size(100%, 100vh);
+}
+
+.nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 3rem;
+  @include fixed(top 0);
+
+  h4 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+  }
+
+  &__btn {
+    color: #fff;
+    padding: 1rem 2rem;
+    background-color: #030000;
+    border-radius: 20px;
+    font-size: 1.5rem;
+  }
+}
+
+.title {
+  @include absolute(top 50% left 50%);
+  transform: translate(-50%, -50%);
+  font-size: 15rem;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+}
+
+.images {
+  @include size(100%, 110%);
+  @include relative(top -10%);
+  z-index: -1;
+}
+
+.image-wrapper {
+  @include size(100%);
+  @include absolute(bottom 0);
+  z-index: -1;
+
+  img {
+    @include size(100%);
+    object-fit: cover;
+  }
+}
+
+.blur {
+  @include size(120%, 25rem);
+  margin-left: -10%;
+  background-color: #030000;
+  @include absolute(bottom -18rem);
+  filter: blur(40px);
+  z-index: 999;
+}
+
+.footer {
+  @include absolute(bottom 0 right 0);
+
+  ul {
+    margin-bottom: 2rem;
+    margin-right: 3rem;
+  }
+
+  li {
+    display: inline;
+    color: #fff;
+    font-size: 1.5rem;
+    margin-left: 2rem;
+  }
+}
+
+.content {
+  @include size(100%);
+  background-color: #030000;
+  @include absolute(top 100%);
+  z-index: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__wrapper {
+    @include size(100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  &__images {
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  &__image-wrapper {
+    @include size(15, 22);
+    text-align: center;
+    position: relative;
+
+    img {
+      @include size(100%);
+      object-fit: cover;
+    }
+
+    h4 {
+      font-size: 2.4rem;
+      @include relative(top -3rem);
+      opacity: 0.6;
+    }
+  }
+
+  .one {
+    top: -1rem;
+  }
+
+  .two {
+    top: -5rem;
+  }
+
+  .three {
+    top: 2rem;
+  }
+
+  .four {
+    top: -2rem;
+  }
+
+  &__text {
+    width: 60%;
+    padding-top: 13rem;
+    text-align: center;
+  }
 }
